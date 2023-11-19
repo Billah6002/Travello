@@ -49,6 +49,19 @@
 
     <div class="mx-auto mt-10 text-center">
         <button class="btn btn-primary bg-orange-600" onclick="loadCart()">See The Cart</button>
+        <button class="btn btn-primary bg-orange-600" onclick="my_modal_600.showModal()">BUY NOW!</button>
+        <dialog id="my_modal_600" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <img src="./res/congratulation.jpg" alt="">
+            <p class="py-4 text-lg text-center">Thank you for buying</p>
+            <div class="modal-action">
+            <form method="dialog">
+                <button class="btn">Close</button>
+                <button class="btn btn-primary" onclick="getReciept(3, 0, -1)">Get Receipt</button>
+            </form>
+            </div>
+        </div>
+        </dialog>
     </div>
 <div id="cart" class="grid grid-cols-1 lg:grid-cols-2 gap-10 w-[60%] mx-auto mt-20">
     

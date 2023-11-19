@@ -14,15 +14,42 @@ let cards = [];
 let prices = [];
 let pics = [];
 
-function getReciept(name, price){
-    let new_name, location;
+function getReciept(name, price, q){
+    let new_name, location, cost, quantity =q;
     if(name==1){
         new_name = "7 Day Family Package";
         location = "Mahasthangarh with food and hotels cost";
+        tot_price = price;
     }
-    else{
+    else if(name == 2){
         new_name = "3 Day Couple Trip";
         location = "Taj Mahal package with all cost covered";
+        tot_price = price;
+    }
+    else{
+        new_name = "Tickets";
+        location = "By Bus";
+        prices = JSON.parse(localStorage.prices);
+        
+        tot_price = 0;
+        quantity = 0;
+        for(const c of prices){
+            // console.log(c);
+            quantity += 1;
+            tot_price += c;
+        }
+
+
+
+
+
+
+
+
+
+
+        
+        
     }
     const props = {
         outputType: jsPDFInvoiceTemplate.OutputType.Save,
@@ -102,10 +129,10 @@ function getReciept(name, price){
                 index + 1,
                 `${new_name}`,
                 `${location}`,
-                price,
-                1,
+                tot_price,
+                quantity,
                 "1",
-                price
+                tot_price
             ])),
             additionalRows: [{
                 col1: 'Total:',
@@ -146,6 +173,7 @@ function getReciept(name, price){
 
 function add(card, price, pic){
     const cc = card;
+    tot_price += price;
     const storedNames = localStorage.names;
     if(storedNames == undefined){
         cards.push(cc);
@@ -177,7 +205,7 @@ function loadCart(){
     prices = JSON.parse(localStorage.prices);
     pics = JSON.parse(localStorage.pics);
     const par = document.getElementById('cart');
-    
+    par.innerHTML = "";
     for(let i=0; i<cards.length; i++){
         const cc = cards[i];
         const pp = prices[i];
@@ -193,7 +221,7 @@ function loadCart(){
         <p>${pp}$</p>
         <div class="card-actions">
             <!-- Open the modal using ID.showModal() method -->
-            <button class="btn btn-primary bg-orange-600" onclick="my_modal_${cnt}.showModal(), add('Rajshahi <-> Barishal', 850)">Add to Cart</button>
+            <button class="btn btn-primary bg-orange-600" onclick="my_modal_${cnt}.showModal(), add('Rajshahi <-> Barishal', 850, ${pics[i]})">Add to Cart</button>
             <dialog id="my_modal_${cnt}" class="modal">
             <div class="modal-box">
                 <h3 class="font-bold text-lg">Added to Cart</h3>
