@@ -12,6 +12,7 @@
 let tot_price = 0;
 let cards = [];
 let prices = [];
+let pics = [];
 
 function getReciept(name, price){
     let new_name, location;
@@ -143,24 +144,30 @@ function getReciept(name, price){
 }
 
 
-function add(card, price){
+function add(card, price, pic){
     const cc = card;
     const storedNames = localStorage.names;
     if(storedNames == undefined){
         cards.push(cc);
         prices.push(price);
+        pics.push(pic);
         localStorage.removeItem("names");
         localStorage.removeItem("prices");
+        localStorage.removeItem("pics");
         localStorage.setItem("names", JSON.stringify(cards));
         localStorage.setItem("prices", JSON.stringify(prices));
+        localStorage.setItem("pics", JSON.stringify(pics));
+
 
     }
     else{
         cards = JSON.parse(localStorage.names);
         cards.push(cc);
         prices.push(price);
+        pics.push(pic);
         localStorage.setItem("names", JSON.stringify(cards));
         localStorage.setItem("prices", JSON.stringify(prices));
+        localStorage.setItem("pics", JSON.stringify(pics));
     }
 
 }
@@ -168,6 +175,7 @@ let cnt = 39;
 function loadCart(){
     cards = JSON.parse(localStorage.names);
     prices = JSON.parse(localStorage.prices);
+    pics = JSON.parse(localStorage.pics);
     const par = document.getElementById('cart');
     
     for(let i=0; i<cards.length; i++){
@@ -178,7 +186,7 @@ function loadCart(){
         div.innerHTML = `
         
         <figure class="px-10 pt-10">
-        <img src="./res/bus1.jpeg" alt="Shoes" class="rounded-xl" />
+        <img src="./res/bus${pics[i]}.jpeg" alt="Shoes" class="rounded-xl" />
         </figure>
         <div class="card-body items-center text-center">
         <h2 class="card-title">${cc}</h2>
