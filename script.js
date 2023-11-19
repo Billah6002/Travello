@@ -1,14 +1,3 @@
-// document.getElementById('pdfForm').addEventListener('submit', function(event) {
-//     event.preventDefault();
-//     const name = document.getElementById('name').value;
-//     const email = document.getElementById('email').value;
-    
-    
-    
-
-    
-// });
-
 let tot_price = 0;
 let cards = [];
 let prices = [];
@@ -38,17 +27,6 @@ function getReciept(name, price, q){
             quantity += 1;
             tot_price += c;
         }
-
-
-
-
-
-
-
-
-
-
-        
         
     }
     const props = {
