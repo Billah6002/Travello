@@ -9,6 +9,9 @@
     
 // });
 
+let tot_price = 0;
+let cards = [];
+let prices = [];
 
 function getReciept(name, price){
     let new_name, location;
@@ -139,3 +142,63 @@ function getReciept(name, price){
     var pdfObject = jsPDFInvoiceTemplate.default(props);
 }
 
+
+function add(card, price){
+    const cc = card;
+    const storedNames = localStorage.names;
+    if(storedNames == undefined){
+        cards.push(cc);
+        prices.push(price);
+        localStorage.removeItem("names");
+        localStorage.removeItem("prices");
+        localStorage.setItem("names", JSON.stringify(cards));
+        localStorage.setItem("prices", JSON.stringify(prices));
+
+    }
+    else{
+        cards = JSON.parse(localStorage.names);
+        cards.push(cc);
+        prices.push(price);
+        localStorage.setItem("names", JSON.stringify(cards));
+        localStorage.setItem("prices", JSON.stringify(prices));
+    }
+
+}
+let cnt = 39;
+function loadCart(){
+    cards = JSON.parse(localStorage.names);
+    prices = JSON.parse(localStorage.prices);
+    const par = document.getElementById('cart');
+    
+    for(let i=0; i<cards.length; i++){
+        const cc = cards[i];
+        const pp = prices[i];
+        const div = document.createElement('div');
+        div.className = "card bg-base-100 shadow-xl";
+        div.innerHTML = `
+        
+        <figure class="px-10 pt-10">
+        <img src="./res/bus1.jpeg" alt="Shoes" class="rounded-xl" />
+        </figure>
+        <div class="card-body items-center text-center">
+        <h2 class="card-title">${cc}</h2>
+        <p>${pp}$</p>
+        <div class="card-actions">
+            <!-- Open the modal using ID.showModal() method -->
+            <button class="btn btn-primary bg-orange-600" onclick="my_modal_${cnt}.showModal(), add('Rajshahi <-> Barishal', 850)">Add to Cart</button>
+            <dialog id="my_modal_${cnt}" class="modal">
+            <div class="modal-box">
+                <h3 class="font-bold text-lg">Added to Cart</h3>
+            </div>
+            <form method="dialog" class="modal-backdrop">
+                <button>close</button>
+            </form>
+            </dialog>
+        </div>
+        </div>
+    
+        `
+        cnt += 1;
+        par.appendChild(div);
+    }
+}

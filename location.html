@@ -49,7 +49,7 @@
     
 <section class="grid grid-cols-1 lg:grid-cols-2 gap-10 w-[60%] mx-auto mt-20">
   <!-- 1 -->
-  <div class="card bg-base-100 shadow-xl">
+  <div id="c-1" class="card bg-base-100 shadow-xl">
     <figure class="px-10 pt-10">
       <img src="./res/bus2.jpeg" alt="Shoes" class="rounded-xl" />
     </figure>
@@ -57,13 +57,22 @@
       <h2 class="card-title">Dhaka <-> Chittagong </h2>
       <p>890$ AC</p>
       <div class="card-actions">
-        <button class="btn btn-primary bg-orange-600">Add to Cart</button>
+        <!-- Open the modal using ID.showModal() method -->
+        <button class="btn btn-primary bg-orange-600" onclick="my_modal_21.showModal(), add('Dhaka <-> Chittagong', 890)">Add to Cart</button>
+        <dialog id="my_modal_21" class="modal">
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">Added to Cart</h3>
+          </div>
+          <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
       </div>
     </div>
   </div>
 
   <!-- 2 -->
-  <div class="card  bg-base-100 shadow-xl">
+  <div id="c-2" class="card  bg-base-100 shadow-xl">
     <figure class="px-10 pt-10">
       <img src="./res/bus3.jpeg" alt="Shoes" class="rounded-xl" />
     </figure>
@@ -71,13 +80,22 @@
       <h2 class="card-title">Dhaka <-> Khulna</h2>
       <p>750$ AC</p>
       <div class="card-actions">
-        <button class="btn btn-primary bg-orange-600">Add to Cart</button>
+        <!-- Open the modal using ID.showModal() method -->
+        <button class="btn btn-primary bg-orange-600" onclick="my_modal_22.showModal(), add('Dhaka <-> Khulna', 750)">Add to Cart</button>
+        <dialog id="my_modal_22" class="modal">
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">Added to Cart</h3>
+          </div>
+          <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
       </div>
     </div>
   </div>
 
   <!-- 3 -->
-  <div class="card bg-base-100 shadow-xl">
+  <div id="c-3" class="card bg-base-100 shadow-xl">
     <figure class="px-10 pt-10">
       <img src="./res/bus1.jpeg" alt="Shoes" class="rounded-xl" />
     </figure>
@@ -85,13 +103,22 @@
       <h2 class="card-title">Chittagong <-> Cox's Bazar</h2>
       <p>490$ Non AC</p>
       <div class="card-actions">
-        <button class="btn btn-primary bg-orange-600">Add to Cart</button>
+        <!-- Open the modal using ID.showModal() method -->
+        <button class="btn btn-primary bg-orange-600" onclick="my_modal_23.showModal(), add('Chittagong <-> Coxs Bazar', 490)">Add to Cart</button>
+        <dialog id="my_modal_23" class="modal">
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">Added to Cart</h3>
+          </div>
+          <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
       </div>
     </div>
   </div>
 
   <!-- 4 -->
-  <div class="card bg-base-100 shadow-xl">
+  <div id="c-4" class="card bg-base-100 shadow-xl">
     <figure class="px-10 pt-10">
       <img src="./res/bus3.jpeg" alt="Shoes" class="rounded-xl" />
     </figure>
@@ -99,13 +126,22 @@
       <h2 class="card-title">Khulna <-> Jossore</h2>
       <p>370$ AC</p>
       <div class="card-actions">
-        <button class="btn btn-primary bg-orange-600">Add to Cart</button>
+        <!-- Open the modal using ID.showModal() method -->
+        <button class="btn btn-primary bg-orange-600" onclick="my_modal_24.showModal(), add('Khulna <-> Jossore', 370)">Add to Cart</button>
+        <dialog id="my_modal_24" class="modal">
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">Added to Cart</h3>
+          </div>
+          <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
       </div>
     </div>
   </div>
 
   <!-- 5 -->
-  <div class="card bg-base-100 shadow-xl">
+  <div id="c-5" class="card bg-base-100 shadow-xl">
     <figure class="px-10 pt-10">
       <img src="./res/bus1.jpeg" alt="Shoes" class="rounded-xl" />
     </figure>
@@ -113,13 +149,22 @@
       <h2 class="card-title">Rajshahi <-> Barishal</h2>
       <p>850$ Non AC</p>
       <div class="card-actions">
-        <button class="btn btn-primary bg-orange-600">Add to Cart</button>
+        <!-- Open the modal using ID.showModal() method -->
+        <button class="btn btn-primary bg-orange-600" onclick="my_modal_25.showModal(), add('Rajshahi <-> Barishal', 850)">Add to Cart</button>
+        <dialog id="my_modal_25" class="modal">
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">Added to Cart</h3>
+          </div>
+          <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
       </div>
     </div>
   </div>
 
   <!-- 6 -->
-  <div class="card bg-base-100 shadow-xl">
+  <div id="c-6" class="card bg-base-100 shadow-xl">
     <figure class="px-10 pt-10">
       <img src="./res/bus2.jpeg" alt="Shoes" class="rounded-xl" />
     </figure>
@@ -127,7 +172,16 @@
       <h2 class="card-title">Barishal <-> Dhaka</h2>
       <p>500$ AC</p>
       <div class="card-actions">
-        <button class="btn btn-primary bg-orange-600">Add to Cart</button>
+        <!-- Open the modal using ID.showModal() method -->
+        <button class="btn btn-primary bg-orange-600" onclick="my_modal_26.showModal(), add('Barishal <-> Dhaka', 500)">Add to Cart</button>
+        <dialog id="my_modal_26" class="modal">
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">Added to Cart</h3>
+          </div>
+          <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
       </div>
     </div>
   </div>
