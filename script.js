@@ -61,8 +61,8 @@ function getReciept(name, price, q){
             address: "Albania, Tirane ish-Dogana, Durres 2001",
             phone: "(+355) 069 11 11 111",
             email: "travello@travel.com",
-            email_1: "info@example.al",
-            website: "www.travello.com",
+            email_1: "travel52@gmail.com",
+            website: "https://billah6002.github.io/Travello/",
         },
         contact: {
             label: "Invoice issued for:",
@@ -137,7 +137,7 @@ function getReciept(name, price, q){
                 }
             }],
             invDescLabel: "Invoice Note",
-            invDesc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
+            invDesc: "Thank you for choosing Travello. We appreciate your business. Have a safe and pleasant journey! If you have any questions or need assistance, feel free to reach out to our team at 01890330463\nSafe travels!",
         },
         footer: {
             text: "The invoice is created on a computer and is valid without the signature and stamp.",
