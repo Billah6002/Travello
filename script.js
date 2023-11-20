@@ -184,7 +184,8 @@ function loadCart(){
     pics = JSON.parse(localStorage.pics);
     const par = document.getElementById('cart');
     par.innerHTML = "";
-    for(let i=0; i<cards.length; i++){
+    const v1 = Math.min(cards.length, Math.min(pics.length, prices.length));
+    for(let i=0; i<v1; i++){
         const cc = cards[i];
         const pp = prices[i];
         const div = document.createElement('div');
@@ -199,7 +200,7 @@ function loadCart(){
         <p>${pp}$</p>
         <div class="card-actions">
             <!-- Open the modal using ID.showModal() method -->
-            <button class="btn btn-primary bg-orange-600" onclick="my_modal_${cnt}.showModal(), add('Rajshahi <-> Barishal', 850, ${pics[i]})">Add to Cart</button>
+            <button class="btn btn-primary bg-orange-600" onclick="my_modal_${cnt}.showModal(), add('${cc}', ${pp}, ${pics[i]})">Add to Cart</button>
             <dialog id="my_modal_${cnt}" class="modal">
             <div class="modal-box">
                 <h3 class="font-bold text-lg">Added to Cart</h3>
